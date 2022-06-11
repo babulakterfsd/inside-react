@@ -1,6 +1,7 @@
 import ClickCounter from '../Components/ClickCounter';
 import Counter from '../Components/Counter';
 import HoverCounter from '../Components/HoverCounter';
+import User from '../Components/User';
 
 function Home() {
     return (
@@ -17,6 +18,11 @@ function Home() {
             </Counter>
             <Counter>
                 {(counter, setCounter) => <HoverCounter count={counter} setCount={setCounter} />}
+            </Counter>
+            <Counter>
+                {(counter, setCounter, user, handleUser) => (
+                    <User user={user} handleUser={handleUser} />
+                )}
             </Counter>
         </div>
     );

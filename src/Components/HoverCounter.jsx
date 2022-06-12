@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
-import React from 'react';
+import Counter from './withHOC';
 
-function HoverCounter({ count, setCount }) {
-    return (
+function HoverCounter() {
+    const insideHoverCounter = ({ count, clickHandler }) => (
         <div style={{ marginLeft: '50px' }}>
-            <h1 onMouseOver={setCount}>Hovered {count} times</h1>
+            <h1 onMouseOut={clickHandler}>Hovered {count} times</h1>
         </div>
     );
+
+    return Counter(insideHoverCounter);
 }
 
 export default HoverCounter;

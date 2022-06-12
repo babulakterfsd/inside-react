@@ -1,13 +1,17 @@
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
 
-function ClickCounter({ count, setCount }) {
-    return (
-        <div>
-            <button type="button" onClick={setCount}>
-                Clicked {count} times
+import Counter from './withHOC';
+
+function ClickCounter() {
+    const insideClickCounter = ({ count, clickHandler }) => (
+        <div style={{ marginLeft: '50px' }}>
+            <button type="button" onClick={clickHandler}>
+                clicked {count} times
             </button>
         </div>
     );
+
+    return Counter(insideClickCounter);
 }
 
 export default ClickCounter;

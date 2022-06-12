@@ -1,15 +1,17 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import Counter from './withHOC';
 
-function User({ user, handleUser }) {
-    return (
+function User() {
+    const insideUser = ({ user, handleUser }) => (
         <div style={{ marginLeft: '50px' }}>
             <button type="button" onClick={handleUser}>
-                set your name
+                click here
             </button>
-            <br />
-            <h3>My name is {user} </h3>
+            <h3>your name is {user}</h3>
         </div>
     );
+
+    return Counter(insideUser);
 }
 
 export default User;

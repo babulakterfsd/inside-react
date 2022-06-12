@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 function Counter({ children }) {
     const [count, setCount] = useState(0);
-    const [user, setUser] = useState(`Guest`);
+    const [user, setUser] = useState(`User not defined`);
 
     const handleCount = () => {
         setCount(count + 1);

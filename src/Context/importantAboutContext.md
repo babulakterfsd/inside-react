@@ -1,4 +1,4 @@
-# Sumit vai khub shundor kore bujhiyechen tar context er tutorial e je kivabe nije nije class use kore context crate kora jaay. orthat oita follow korle khub valovabei bojha jaay j createcontext() ki kore, useContext() kno, overall context api kivabe kaj kore clear idea paoa jaay. kkhno vule gele sumit vai er video dekha jete pare.
+# Sumit vai khub shundor kore bujhiyechen tar context er tutorial e je kivabe nije nije class use kore context crate kora jaay. orthat oita follow korle khub valovabei bojha jaay j createcontext() ki kore, useContext() kno, overall context api kivabe kaj kore clear idea paoa jaay. kkhno vule gele sumit vai er video dekha jete pare. tahole react j createContext , useContext dey, oita vitore vitore kivabe kaj kore clear houa jabe. then icchamoto oi class based implement baad diye fucnitonal e context use korte hobe.
 
 ----------------------- step 1 : createContext ----------------
 

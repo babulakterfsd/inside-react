@@ -52,4 +52,19 @@ setNumber((prevNumber) => prevNumber + 1);
 
 erokom korle ei component unmount houar aag muhurte oi interval stop hoye performance thik rakhbe
 
+     componentDidMount :
+            useEffect(() => {
+             const timer = setInterval(aFunction, 1000)
+           }, [])
+
+
+    componentWillUnMount:
+            useEffect(() => {
+             const timer = setInterval(aFunction, 1000)
+
+             return () => clearInterval(timer)
+           }, [])
+
+    jodi dependency thake array te, taile sei dependancy te update hole re render hobe.. ar jodi second parameter e na deya hoy, tahole always call hotei thakbe
+
 5.

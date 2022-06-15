@@ -1,4 +1,18 @@
-1.  Onk gula setState eksathe call hole ba onnano kichu khetreo react onk gula setState ke batch kore eksathe call kore. tai onk somoy expected output nao paoa jete pare, jodi directly setState er moddhe directly oi state ke niye update korar try kora hoy. jemon :
+0. Common Hooks in react:
+   a) useState
+   b) useEffect
+   c) useCallback
+   d) useMemo
+   e) useRef
+   f) useReducer
+   g) useLayoutEffect
+   h) useHistory
+   i) useLocation
+   j) useParams
+   k) useRouteMatch
+   l)
+
+1. Onk gula setState eksathe call hole ba onnano kichu khetreo react onk gula setState ke batch kore eksathe call kore. tai onk somoy expected output nao paoa jete pare, jodi directly setState er moddhe directly oi state ke niye update korar try kora hoy. jemon :
 
 //wrong way
 const handleNumber = () => {

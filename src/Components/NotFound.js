@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function NotFound() {
+    console.log('NotFound component rendered');
     return (
         <div
             style={{

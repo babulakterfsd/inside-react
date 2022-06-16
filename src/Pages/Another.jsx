@@ -4,6 +4,7 @@ import useAuth from '../Hooks/useAuth';
 
 function Another() {
     const { number, handleNumber } = useAuth();
+    console.log('Another component rendered');
     return (
         <div
             style={{

@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
+import HomesChild from '../Components/HomesChild';
 import useAuth from '../Hooks/useAuth';
 
 function Home() {
-    const { number, handleNumber } = useAuth();
+    const { number, handleNumber, test, handleTest } = useAuth();
+
+    console.log('Home component rendered');
 
     return (
         <div
@@ -32,6 +35,7 @@ function Home() {
                     <button type="button">Go to another page</button>
                 </Link>
             </div>
+            <HomesChild test={test} handleTest={handleTest} />
         </div>
     );
 }

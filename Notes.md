@@ -102,4 +102,18 @@ Finally,
 - useCallback - kono fucntion er reference mone rakhte , orthat fucntion body ta kei chine rakhbe. reference type data er khetre eta use kora hoy.
 - useMemo : big calculative function gular return value mone rakhe performance issue theke bachate.
 
-6.
+6. useRef hook ta muloto use hoy DOM related kaj korar jonno. react e to direct dom manupulate kora thik na, tai react nijei ref dey kono ekta element ke target kore shei onujayee function likhte. Homechild component e example diye rekhechi. r jodi ref ke parent theke props er maddhome child e pathate hoy, taile forwardRef naamer jinish ta use korte hoy. sumit vai er react 22 number tut e shundor kore bekkha kora ache . parent theke shob props akare jabe. maane parent ei shob lekha hobe (useEffect soho shob function). just child ke tkhn oi ref ta paoar jonno forwardRef namok ekta HOC er moddhe dite hobe jeta ekta abar onno component return kore. oita ekta variable e store krte hoy. then oi variable ke export kore use korte hoy. r oi ref ta paoa jaay ashol component er second parameter hioshebe, first parameter e thake props gula .. onkta evabe likhte hoy :
+
+   function Child({props1, props2}, ref) {
+   return <input ref={ref} type={props1}>
+   }
+
+   const forwaredRef = React.forwardRef(Child)
+
+   export default forwaredRef;
+
+   r parent er code homechild e lekhai ache
+
+   \*\* useRef er current use kore ekta timer (ba interval) off kora jaay useEffect er baire theke.jeta khub interesting. sumit vai dekhaiche.
+
+7.

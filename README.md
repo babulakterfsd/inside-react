@@ -24,4 +24,4 @@
 
 ## Next process ---
 
-[a link](./Notes.md)
+[Notes](./Notes.md)

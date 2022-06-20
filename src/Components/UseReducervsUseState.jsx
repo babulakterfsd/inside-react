@@ -1,54 +1,20 @@
-import { useEffect, useReducer } from 'react';
-
-const initialState = {
-    loading: true,
-    post: [],
-    err: '',
-};
-
-const myReducer = (state, action) => {
-    switch (action.type) {
-        case 'success':
-            return {
-                loading: false,
-                post: action.result,
-                err: '',
-            };
-        case 'error':
-            return {
-                loading: false,
-                post: {},
-                err: `Something error happened while fetching data`,
-            };
-        default:
-            return state;
-    }
-};
+import { Audio } from 'react-loader-spinner';
+import useAuth from '../Hooks/useAuth';
 
 function UseReducervsUseState() {
-    const [state, dispatch] = useReducer(myReducer, initialState);
+    const { fetchData } = useAuth();
 
-    useEffect(() => {
-        fetch(`https://cryptic-sea-29383.herokuapp.com/products`)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data);
-                dispatch({ type: 'success', result: data });
-            })
-            .catch(() => {
-                dispatch({ type: 'error' });
-            });
-    }, []);
-
+    if (fetchData.loading) {
+        return <Audio height="100" width="100" color="grey" ariaLabel="loading" />;
+    }
     return (
         <div>
-            {state.post.map((element) => (
+            {fetchData?.post.map((element) => (
                 <p key={new Date().getMilliseconds() + Math.random()}>{element.title}</p>
             ))}
         </div>
     );
 }
-
 export default UseReducervsUseState;
 
 // import { useEffect, useState } from 'react';

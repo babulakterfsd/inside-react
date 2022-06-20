@@ -16,10 +16,10 @@ function App() {
         >
             <AuthProvider>
                 <Dada />
+                <div style={{ marginTop: '50px' }}>
+                    <UseReducervsUseState style={{ margin: '30px auto' }} />
+                </div>
             </AuthProvider>
-            <div style={{ marginTop: '50px' }}>
-                <UseReducervsUseState style={{ margin: '30px auto' }} />
-            </div>
         </div>
     );
 }

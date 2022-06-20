@@ -2,7 +2,7 @@ import React from 'react';
 import useAuth from '../Hooks/useAuth';
 
 function Chele() {
-    const { count, dispatch } = useAuth();
+    const { count, countDispatch } = useAuth();
     return (
         <div>
             <h1 style={{ display: 'flex', justifyContent: 'center' }}>The count is {count} now </h1>
@@ -10,11 +10,11 @@ function Chele() {
                 <button
                     style={{ marginRight: '20px' }}
                     type="button"
-                    onClick={() => dispatch('increment')}
+                    onClick={() => countDispatch('increment')}
                 >
                     increment
                 </button>
-                <button type="button" onClick={() => dispatch('decrement')}>
+                <button type="button" onClick={() => countDispatch('decrement')}>
                     decrement
                 </button>
             </div>

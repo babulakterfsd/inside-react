@@ -1,7 +1,13 @@
-import Home2 from './Pages/Home2';
+import React from 'react';
+import Dada from './Components/Dada';
+import AuthProvider from './Context/AuthProvider';
 
 function App() {
-    return <Home2 />;
+    return (
+        <AuthProvider>
+            <Dada />
+        </AuthProvider>
+    );
 }
 
 export default App;

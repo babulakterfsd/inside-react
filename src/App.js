@@ -1,15 +1,7 @@
-import { BrowserRouter } from 'react-router-dom';
-import AllRoutes from './Components/AllRoutes';
-import AuthProvider from './Context/AuthProvider';
+import Home from './Pages/Home';
 
 function App() {
-    return (
-        <AuthProvider>
-            <BrowserRouter>
-                <AllRoutes />
-            </BrowserRouter>
-        </AuthProvider>
-    );
+    return <Home />;
 }
 
 export default App;

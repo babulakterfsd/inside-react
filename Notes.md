@@ -10,7 +10,10 @@
    i) useLocation
    j) useParams
    k) useRouteMatch
-   l)
+   l) useLocation
+   m) useParams
+   n) Navigate()
+   o)
 
 1. Onk gula setState eksathe call hole ba onnano kichu khetreo react onk gula setState ke batch kore eksathe call kore. tai onk somoy expected output nao paoa jete pare, jodi directly setState er moddhe directly oi state ke niye update korar try kora hoy. jemon :
 
@@ -114,6 +117,6 @@ Finally,
 
    r parent er code homechild e lekhai ache
 
-   \*\* useRef er current use kore ekta timer (ba interval) off kora jaay useEffect er baire theke.jeta khub interesting. sumit vai dekhaiche.orthat useRef ke amra storage hishebeo use korte pari .. hahaha.. ref er current er moddhe kichu store korbo, then oita globally access korbo . jemon useEffect er moddher interval. ei interval j variable e store kora seta kintu useEffect er baire theke accessible na, but interval ta jodi amra kono button er ref er current e save rakhi, taile baire theke oi button click korei oi interval stop korte parbo
+   useRef er current use kore ekta timer (ba interval) off kora jaay useEffect er baire theke.jeta khub interesting. sumit vai dekhaiche.orthat useRef ke amra storage hishebeo use korte pari .. hahaha.. ref er current er moddhe kichu store korbo, then oita globally access korbo . jemon useEffect er moddher interval. ei interval j variable e store kora seta kintu useEffect er baire theke accessible na, but interval ta jodi amra kono button er ref er current e save rakhi, taile baire theke oi button click korei oi interval stop korte parbo
 
-7.
+7. ei part e amra janbo react er useReducer hook niye, jeta most important ekta hook react er.

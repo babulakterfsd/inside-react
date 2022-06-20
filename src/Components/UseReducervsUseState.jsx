@@ -2,62 +2,67 @@ import { useEffect, useReducer } from 'react';
 
 const initialState = {
     loading: true,
-    error: '',
-    post: {},
+    post: [],
+    err: '',
 };
 
-const reducer = (state, action) => {
+const myReducer = (state, action) => {
     switch (action.type) {
-        case 'SUCCESS':
+        case 'success':
             return {
                 loading: false,
                 post: action.result,
-                error: '',
+                err: '',
             };
-        case 'ERROR':
+        case 'error':
             return {
                 loading: false,
                 post: {},
-                error: 'There was a problem fetching!',
+                err: `Something error happened while fetching data`,
             };
         default:
             return state;
     }
 };
 
-export default function GetPost2() {
-    const [state, dispatch] = useReducer(reducer, initialState);
+function UseReducervsUseState() {
+    const [state, dispatch] = useReducer(myReducer, initialState);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts/1')
-            .then((response) => response.json())
+        fetch(`https://cryptic-sea-29383.herokuapp.com/products`)
+            .then((res) => res.json())
             .then((data) => {
-                dispatch({ type: 'SUCCESS', result: data });
+                console.log(data);
+                dispatch({ type: 'success', result: data });
             })
             .catch(() => {
-                dispatch({ type: 'ERROR' });
+                dispatch({ type: 'error' });
             });
     }, []);
 
     return (
         <div>
-            {state.loading ? 'Loading....' : state.post.title}
-            {state.error || null}
+            {state.post.map((element) => (
+                <p key={new Date().getMilliseconds() + Math.random()}>{element.title}</p>
+            ))}
         </div>
     );
 }
+
+export default UseReducervsUseState;
 
 // import { useEffect, useState } from 'react';
 
 // export default function GetPost() {
 //     const [loading, setLoading] = useState(true);
 //     const [error, setError] = useState('');
-//     const [post, setPost] = useState({});
+//     const [post, setPost] = useState([]);
 
 //     useEffect(() => {
-//         fetch('https://jsonplaceholder.typicode.com/posts/1')
+//         fetch('https://jsonplaceholder.typicode.com/posts')
 //             .then((response) => response.json())
 //             .then((data) => {
+//                 // console.log(data);
 //                 setLoading(false);
 //                 setPost(data);
 //                 setError('');
@@ -71,8 +76,9 @@ export default function GetPost2() {
 
 //     return (
 //         <div>
-//             {loading ? 'Loading....' : post.title}
-//             {error || null}
+//             {post.slice(0, 5).map((ele) => (
+//                 <p key={new Date().getMilliseconds() + Math.random()}>{ele.title}</p>
+//             ))}
 //         </div>
 //     );
 // }

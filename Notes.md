@@ -10,7 +10,6 @@
    i) useLocation
    j) useParams
    k) useRouteMatch
-   l)
 
 1. Onk gula setState eksathe call hole ba onnano kichu khetreo react onk gula setState ke batch kore eksathe call kore. tai onk somoy expected output nao paoa jete pare, jodi directly setState er moddhe directly oi state ke niye update korar try kora hoy. jemon :
 

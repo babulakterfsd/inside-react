@@ -1,17 +1,11 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-alert */
-import { useState } from 'react';
+import useFirebase from './useFirebase';
 
 const AllStates = () => {
-    const [user, setUser] = useState(null);
+    const { user, handleGoogleLogin, logOut } = useFirebase();
 
-    const handleUser = () => {
-        setUser(prompt('set your name'));
-    };
-    const logOut = () => {
-        setUser(null);
-    };
-
-    return { user, handleUser, logOut };
+    return { user, handleGoogleLogin, logOut };
 };
 
 export default AllStates;

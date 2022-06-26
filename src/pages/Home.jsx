@@ -4,19 +4,34 @@ import useAuth from '../hooks/useAuth';
 
 function Home() {
     const { user, logOut } = useAuth();
-    console.log(user);
     return (
         <div>
             <p>this is the homepage</p>
             <h1>I am {user}</h1>
             {user ? (
-                <button type="button" onClick={() => logOut()}>
-                    Logout
-                </button>
+                <div>
+                    <Link to="/dashboard">
+                        <button type="button">Visit Dashboard</button>
+                    </Link>
+                    <Link to="/products">
+                        <button type="button"> Products Page</button>
+                    </Link>
+                    <button type="button" onClick={() => logOut()}>
+                        Logout
+                    </button>
+                </div>
             ) : (
-                <Link to="/login">
-                    <button type="button"> Login Page</button>
-                </Link>
+                <>
+                    <Link to="/login">
+                        <button type="button"> Login Page</button>
+                    </Link>
+                    <Link to="/dashboard">
+                        <button type="button">Visit Dashboard</button>
+                    </Link>
+                    <Link to="/products">
+                        <button type="button"> Products Page</button>
+                    </Link>
+                </>
             )}
         </div>
     );

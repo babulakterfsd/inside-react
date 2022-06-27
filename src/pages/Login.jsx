@@ -26,7 +26,7 @@ import useAuth from '../hooks/useAuth';
 
 function Login() {
     const { user, handleGoogleLogin } = useAuth();
-    // const location = useLocation();
+
     return (
         <div>
             <p>this is the login page</p>

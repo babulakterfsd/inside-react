@@ -1,11 +1,19 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-alert */
+import { useEffect, useState } from 'react';
 import useFirebase from './useFirebase';
 
 const AllStates = () => {
     const { user, handleGoogleLogin, logOut } = useFirebase();
+    const [products, setProducts] = useState([]);
 
-    return { user, handleGoogleLogin, logOut };
+    useEffect(() => {
+        fetch('https://cryptic-sea-29383.herokuapp.com/products')
+            .then((res) => res.json())
+            .then((data) => setProducts(data));
+    }, []);
+
+    return { user, handleGoogleLogin, logOut, products };
 };
 
 export default AllStates;

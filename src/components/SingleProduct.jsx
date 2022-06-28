@@ -7,7 +7,7 @@ function SingleProduct({ product }) {
     return (
         <div>
             <h3>{product.title}</h3>
-            <Link to={product._id} state={product}>
+            <Link to={product._id}>
                 <button type="button">Buy</button>
             </Link>
         </div>

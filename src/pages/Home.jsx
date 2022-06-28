@@ -25,7 +25,7 @@ function Home() {
                 </div>
             ) : (
                 <>
-                    <Link to="/login">
+                    <Link to="/login" state="/">
                         <button type="button"> Login Page</button>
                     </Link>
                     <Link to="/dashboard">

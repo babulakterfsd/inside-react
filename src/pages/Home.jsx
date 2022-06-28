@@ -1,14 +1,17 @@
+/* eslint-disable no-nested-ternary */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 function Home() {
-    const { user, logOut } = useAuth();
+    const { user, logOut, isLoading } = useAuth();
     return (
         <div>
             <p>this is the homepage</p>
             <h1>I am {user}</h1>
-            {user ? (
+            {isLoading ? (
+                `Loading...........`
+            ) : user ? (
                 <div>
                     <Link to="/dashboard">
                         <button type="button">Visit Dashboard</button>

@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
@@ -6,7 +6,7 @@ function Order() {
     const { productID } = useParams();
 
     const [orderedProduct, setOrderedProduct] = useState({});
-    const { title, price, description, img } = orderedProduct;
+    const { title, description, img } = orderedProduct;
 
     useEffect(() => {
         fetch(`https://cryptic-sea-29383.herokuapp.com/products/${productID}`)

@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 function Login() {
     const { user, handleGoogleLogin } = useAuth();
+    const location = useLocation();
+    const targetURL = location.state || '/dashboard';
 
     return (
         <div>
@@ -12,8 +14,9 @@ function Login() {
                 <button type="button" onClick={() => handleGoogleLogin()}>
                     Login with Google
                 </button>
-            ) : // <Navigate to="/" state={{ from: location }} />
-            null}
+            ) : (
+                <Navigate to={`${targetURL}`} />
+            )}
             <Link to="/">
                 <button type="button">Back to home</button>
             </Link>

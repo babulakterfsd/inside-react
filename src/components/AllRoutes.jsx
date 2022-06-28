@@ -13,7 +13,7 @@ function AllRoutes() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Navigate to="/" />} />
             <Route path="/products" element={<Products />} />
-            <Route path="login" element={<Login />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/*" element={<NotFound />} />
             <Route path="/*" element={<PrivateOutlet />}>
                 {/* I can place multiple private components here.. like products component under the dashboard in the same way to make it private. */}

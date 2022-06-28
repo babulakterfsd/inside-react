@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SingleProduct from '../components/SingleProduct';
 import useAuth from '../hooks/useAuth';
 
 function Products() {
@@ -16,12 +17,9 @@ function Products() {
                     margin: '30px 25px',
                 }}
             >
-                {products.map((singleProduct) => (
+                {products.map((product) => (
                     <div key={Math.random() * 1500}>
-                        <h3>{singleProduct.title}</h3>
-                        <button type="button" onClick={() => console.log(singleProduct?._id)}>
-                            Buy
-                        </button>
+                        <SingleProduct product={product} />
                     </div>
                 ))}
             </div>

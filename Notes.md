@@ -2,6 +2,10 @@
 
 - router dom er Link tag er state props akare oi component theke jekono kichu pathano jaay, seta hote pare kono url path, hote pare kono object. beparta khub e kaje laage. then, oi link e click kore destination e jaoar por sekhane useLocation er location.state diye ja pathano hoyeche seta puropuri paoa jaay. kintu dynamic route er khetre object pathate parini, oi dynamic route tai peyechi location.state er moddhe. orthat, dynamic route er dynamic part ta location.state e joma thake. ekhane login er ekta valo kapjhap ache, but 10 min time diye console kore kore dekhle valo bujhe fela somvob.
 
+- parameter theke kono query er value access korte chaile ba kono query parameter set korte chaile useSearchParams hook er maddhome easily kora jay, jeta anisul vai 50 min er por khub shundor kore dekhiyeche
+
+-Navigate use korle replace use kora uchit, noile same route ei vitore vitore onk stack hoy
+
 # React checklist :
 
      0. Virtual DOM, linting, event handling, re-rendering, conditional rendering, list-keys, form handling,

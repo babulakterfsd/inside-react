@@ -13,7 +13,7 @@ function AllRoutes() {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Navigate to="/" />} />
+            <Route path="/home" element={<Navigate to="/" replace />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products" element={<PrivateOutlet />}>
                 <Route path="/products/:productID" element={<Order />} />

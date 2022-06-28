@@ -8,7 +8,7 @@ function PrivateOutlet() {
     if (isLoading) {
         return `Loading................`;
     }
-    return user ? <Outlet /> : <Navigate to="/login" state={location.pathname} />;
+    return user ? <Outlet /> : <Navigate to="/login" state={location.pathname} replace />;
 }
 
 export default PrivateOutlet;

@@ -15,7 +15,7 @@ function Login() {
                     Login with Google
                 </button>
             ) : (
-                <Navigate to={`${targetURL}`} />
+                <Navigate to={`${targetURL}`} replace />
             )}
             <Link to="/">
                 <button type="button">Back to home</button>

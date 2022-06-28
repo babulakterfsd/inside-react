@@ -18,11 +18,13 @@ function Products() {
                     margin: '30px 25px',
                 }}
             >
-                {products.map((product) => (
-                    <div key={Math.random() * 1500}>
-                        <SingleProduct product={product} />
-                    </div>
-                ))}
+                {products.length === 0
+                    ? `Loading........`
+                    : products.map((product) => (
+                          <div key={Math.random() * 1500}>
+                              <SingleProduct product={product} />
+                          </div>
+                      ))}
             </div>
             <Link to="/">
                 <button type="button">Back to home</button>

@@ -13,6 +13,7 @@ const auth = getAuth();
 
 const useFirebase = () => {
     const [user, setUser] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -24,6 +25,7 @@ const useFirebase = () => {
         signOut(auth).then(() => {
             setUser(null);
         });
+        setIsLoading(false)
     };
 
       const handleGoogleLogin =  () => {
@@ -33,7 +35,8 @@ const useFirebase = () => {
             })
             .catch((error) => {
                 console.log(error);
-            });
+            })
+            setIsLoading(false)
     };
 
     // firebase observer if user is logged in or not, checking user state
@@ -44,6 +47,7 @@ const useFirebase = () => {
             } else {
                 setUser(null);
             }
+            setIsLoading(false)
         });
 
         return () => unSubscribed;
@@ -53,6 +57,8 @@ const useFirebase = () => {
         handleGoogleLogin,
         user,
         logOut,
+        isLoading,
+        setIsLoading
     };
 };
 

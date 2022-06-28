@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import useFirebase from './useFirebase';
 
 const AllStates = () => {
-    const { user, handleGoogleLogin, logOut } = useFirebase();
+    const { user, handleGoogleLogin, logOut, isLoading, setIsLoading } = useFirebase();
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -13,7 +13,7 @@ const AllStates = () => {
             .then((data) => setProducts(data));
     }, []);
 
-    return { user, handleGoogleLogin, logOut, products };
+    return { user, handleGoogleLogin, logOut, products, isLoading, setIsLoading };
 };
 
 export default AllStates;

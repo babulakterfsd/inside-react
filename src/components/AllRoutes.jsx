@@ -5,6 +5,8 @@ import Login from '../pages/Login';
 import NotFound from '../pages/NotFound';
 import Products from '../pages/Products';
 import Dashboard from './Dashboard';
+import Order from './Order';
+import Payment from './Payment';
 import PrivateOutlet from './PrivateOutlet';
 
 function AllRoutes() {
@@ -13,10 +15,13 @@ function AllRoutes() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Navigate to="/" />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/products" element={<PrivateOutlet />}>
+                <Route path="/products/:productID" element={<Order />} />
+            </Route>
             <Route path="/login" element={<Login />} />
-            <Route path="/*" element={<NotFound />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="*" element={<NotFound />} />
             <Route path="/*" element={<PrivateOutlet />}>
-                {/* I can place multiple private components here.. like products component under the dashboard in the same way to make it private. */}
                 <Route path="dashboard" element={<Dashboard />} />
             </Route>
         </Routes>

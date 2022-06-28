@@ -7,6 +7,7 @@ import useAuth from '../hooks/useAuth';
 
 function Products() {
     const { user, products } = useAuth();
+
     return (
         <div>
             <p>This is the Product Gallary</p>

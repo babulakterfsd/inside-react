@@ -1,13 +1,15 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function SingleProduct({ product }) {
     return (
         <div>
             <h3>{product.title}</h3>
-            <button type="button" onClick={() => console.log(product?._id)}>
-                Buy
-            </button>
+            <Link to={product._id}>
+                <button type="button">Buy</button>
+            </Link>
         </div>
     );
 }

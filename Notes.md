@@ -32,3 +32,7 @@
       3. user can select random products and order them
       4. after login from the login page, user will be redirected to the dashboard page. if he/she is a normal user, he will see his/her dashboard. If the user is an admin, he will see admin dashboard.
       5. user and admin, both dashboard going to be proteted. no one can access others, anyhow.
+
+# Error Boundary
+
+- jodi kono karone app crush kore totally ba kono ekta nirdishto component, react tahole lal batti jalaya dey ebong sheta kete dile blank page dekhay. to ei beparta theke bachay error boundry. jodi kono karone app crash kore, tahole Ei error boundry ekta fallback UI dekhay. ekhono funcitonal component e eta ready hoyni, tai class component diye korechi ami.

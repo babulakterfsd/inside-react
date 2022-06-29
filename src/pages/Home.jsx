@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 /* eslint-disable no-nested-ternary */
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -5,6 +6,7 @@ import useAuth from '../hooks/useAuth';
 
 function Home() {
     const { user, logOut, isLoading } = useAuth();
+    // throw new Error(`This will check how error boundry works !`); uncomment to check error boundry
     return (
         <div>
             <p>this is the homepage</p>

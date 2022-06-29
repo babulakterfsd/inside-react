@@ -6,7 +6,7 @@ function Payment() {
         <div>
             <p>This is the payment page</p>
             <Link to="/" style={{ marginTop: '20px' }}>
-                <button type="button">Back to home</button>
+                <button type="button">Go Back to home</button>
             </Link>
         </div>
     );

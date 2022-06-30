@@ -7,7 +7,6 @@ import useAuth from '../hooks/useAuth';
 
 function Home() {
     const { user, logOut, isLoading, firestoreData } = useAuth();
-    // throw new Error(`This will check how error boundry works !`); uncomment to check error boundry
 
     return (
         <div>

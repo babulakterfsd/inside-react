@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
 
-import Counter from './withHOC';
+import withHoc from './withHOC';
 
 function ClickCounter() {
     const insideClickCounter = ({ count, clickHandler }) => (
@@ -11,7 +11,7 @@ function ClickCounter() {
         </div>
     );
 
-    return Counter(insideClickCounter);
+    return withHoc(insideClickCounter);
 }
 
 export default ClickCounter;

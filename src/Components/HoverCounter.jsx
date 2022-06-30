@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
-import Counter from './withHOC';
+import withHoc from './withHOC';
 
 function HoverCounter() {
     const insideHoverCounter = ({ count, clickHandler }) => (
@@ -8,7 +8,7 @@ function HoverCounter() {
         </div>
     );
 
-    return Counter(insideHoverCounter);
+    return withHoc(insideHoverCounter);
 }
 
 export default HoverCounter;

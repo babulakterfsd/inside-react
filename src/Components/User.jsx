@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import Counter from './withHOC';
+import withHoc from './withHOC';
 
 function User() {
     const insideUser = ({ user, handleUser }) => (
@@ -11,7 +11,7 @@ function User() {
         </div>
     );
 
-    return Counter(insideUser);
+    return withHoc(insideUser);
 }
 
 export default User;

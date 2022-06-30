@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-unreachable */
 /* eslint-disable no-nested-ternary */
 import React from 'react';
@@ -5,8 +6,9 @@ import { Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 function Home() {
-    const { user, logOut, isLoading } = useAuth();
+    const { user, logOut, isLoading, firestoreData } = useAuth();
     // throw new Error(`This will check how error boundry works !`); uncomment to check error boundry
+
     return (
         <div>
             <p>this is the homepage</p>
@@ -38,6 +40,22 @@ function Home() {
                     </Link>
                 </>
             )}
+            <div
+                style={{
+                    display: 'flex',
+                    height: '40vh',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexDirection: 'column',
+                }}
+            >
+                <h3 style={{ margin: '20px 0px' }}>Lets get developers data from firestore</h3>
+                {firestoreData === undefined
+                    ? `Loading developers...`
+                    : firestoreData?.map((singleUser) => (
+                          <p key={singleUser.id}>{singleUser.name}</p>
+                      ))}
+            </div>
         </div>
     );
 }

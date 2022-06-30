@@ -1,10 +1,13 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-alert */
 import { useEffect, useState } from 'react';
+import useFirestoreData from './useCustomFireStore';
 import useFirebase from './useFirebase';
 
 const AllStates = () => {
     const { user, handleGoogleLogin, logOut, isLoading, setIsLoading } = useFirebase();
+    const firestoreData = useFirestoreData();
+
     const [products, setProducts] = useState([]);
     const [admin, setAdmin] = useState(null);
 
@@ -22,7 +25,17 @@ const AllStates = () => {
             .then((data) => setProducts(data));
     }, []);
 
-    return { user, handleGoogleLogin, logOut, products, isLoading, setIsLoading, admin, setAdmin };
+    return {
+        user,
+        handleGoogleLogin,
+        logOut,
+        products,
+        isLoading,
+        setIsLoading,
+        admin,
+        setAdmin,
+        firestoreData,
+    };
 };
 
 export default AllStates;

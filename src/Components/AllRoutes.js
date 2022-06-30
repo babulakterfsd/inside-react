@@ -18,7 +18,7 @@ function AllRoutes() {
                     }
                 /> */}
                 <Route path="/another" element={<Another />} />
-                <Route path="*" element={<NotFound />} />
+                <Route path="/*" element={<NotFound />} />
             </Routes>
         </div>
     );
